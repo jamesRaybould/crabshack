@@ -1,10 +1,9 @@
-
 <div class="name">
 	{{item.name}}
 	<span class="price">
-		{{item.price}}</span>
-		<div {{bind-attr class="isHidden"}}>
-			{{item.description}}
-		</div>
+		{{item.price}}
+	</span>
+	<div {{bind-attr class=":description isHidden"}}>
+		{{item.description}}
 	</div>
-	
+</div>
