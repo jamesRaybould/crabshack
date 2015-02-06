@@ -3,7 +3,7 @@
 	{{item.name}}
 	<span class="price">
 		{{item.price}}</span>
-		<div class="description hidden">
+		<div {{bind-attr class="isHidden"}}>
 			{{item.description}}
 		</div>
 	</div>
