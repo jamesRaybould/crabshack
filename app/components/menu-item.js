@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	click: function(evt){
+	click: function(){
 		this.set("isHidden", !this.get("isHidden"));
 	},
 	isHidden: function(){
