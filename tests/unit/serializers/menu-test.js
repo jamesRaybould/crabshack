@@ -37,9 +37,9 @@ test('It returns both test objects with an ID attached', function(){
 	ok(item.id !== undefined || item.id !== null);
 });
 
-test('The ID of the first item is 1', function(){
+test('The ID of the first item is "menuItem1"', function(){
 	var item = result[0];
-	ok(item.id === 1);
+	ok(item.id === "menuItem1");
 });
 
 test('The name of the first item is correctly set', function(){

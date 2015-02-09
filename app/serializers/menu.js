@@ -11,7 +11,7 @@ export default DS.RESTSerializer.extend({
 		//array with the correct name and an ID based on where it is in the list
 		for(var i = 0; i < keys.length; i++){
 			var menuItem = payload[keys[i]];
-			menuItem.id = i+1;
+			menuItem.id = keys[i];
 			menuItem.name = keys[i];
 			menuItems.push(menuItem);
 		}				
