@@ -18,6 +18,10 @@ test('it exists', function() {
     ok(adapter);
 });
 
-test('Returns the unpluralised version of the type', function(){
+test('Returns the unpluralised version of the menu type', function(){
 	ok(adapter.pathForType('Menu') === 'menu');
+});
+
+test('Returns the pluralised version of any type other than menu', function(){
+	ok(adapter.pathForType('Order') === 'orders');
 });

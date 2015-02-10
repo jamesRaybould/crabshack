@@ -4,5 +4,6 @@ export default DS.Model.extend({
 	name: DS.attr('string'),
 	type:  DS.attr('string'),
 	description:  DS.attr('string'),
-	price:  DS.attr('string')
+	price:  DS.attr('string'),
+	order: DS.hasMany('order')
 });

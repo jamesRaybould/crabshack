@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('menu', 'Menu', {
+moduleForModel('order', 'Order', {
   // Specify the other units that are required for this test.
-  needs: ['model:order']
+  needs: ['model:menu']
 });
 
 test('it exists', function() {

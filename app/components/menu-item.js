@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+	actions: {
+		order:function(){
+			this.sendAction('order', this.get("item"));
+		}
+	},
 	click: function(){
 		this.toggleProperty("isHidden");
 	},
