@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:menu', 'MenuController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:order']
 });
 
 // Replace this with your real tests.
