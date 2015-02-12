@@ -1,13 +1,16 @@
+
+{{#if hasItems}}
 <h3>Order</h3>
 
 <ul>
 	{{#each}}
 	<li>
-		{{id}} 
+		{{name}}
 	</li>
 	{{/each}}
 </ul>
-
+<h3>Subtotal: £{{subTotal}}</h3>
 <button {{action "order"}}>Order</button>
-
+<button {{action "clearAll"}}>Clear All</button>
+{{/if}}
 {{outlet}}
