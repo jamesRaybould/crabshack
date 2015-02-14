@@ -6,7 +6,11 @@ export default Ember.ArrayController.extend({
 			var orderItems = this.get('model');
 			var order = this.store.createRecord('order', {tableNumber: 1});
 			order.get('orderItems').addObjects(orderItems);
-			order.save();
+			order.save().then(function(){
+			
+			}, function(){
+				//Ignore the error
+			});
 		},
 		
 		clearAll:function(){

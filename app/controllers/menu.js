@@ -6,7 +6,6 @@ export default Ember.ArrayController.extend({
 		order: function(item){
 			//Is there a better way that jumping across *into* another controller??
 			this.get('controllers.order').pushObject(item);
-			// this.sendAction('controllers.order')
 		}
 	},
 
