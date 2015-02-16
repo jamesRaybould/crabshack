@@ -7,9 +7,9 @@ export default Ember.Component.extend({
 		}
 	},
 	click: function(evt){
-		if (evt.target.nodeName != "BUTTON") {
+		if (evt.target.nodeName !== "BUTTON") {
 			this.toggleProperty("isHidden");
-		};
+		}
 	},
 	//Default out the `isHidden` value to true so we *don't* show the description by default
 	isHidden: function(){

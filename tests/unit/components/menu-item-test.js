@@ -32,26 +32,42 @@ test('The default of isHidden is true', function(){
 
 test('the click event toggles isHidden', function(){
   var component = this.subject();
+  var clickEvt = {target: {nodeName: "not a button"}};
 
   // appends the component to the page
   this.append();
 
   Ember.run(function() {
-    component.click();
+    component.click(clickEvt);
   });
 
   ok(component.get("isHidden") === false);
 });
 
-test('two click events from the initial load of the component set isHidden to true', function(){
+test('the click event on the button does *not* toggle isHidden', function(){
   var component = this.subject();
+  //nodeName is BUTTON when the button is clicked
+  var clickEvt = {target: {nodeName: "BUTTON"}};
 
   // appends the component to the page
   this.append();
 
   Ember.run(function() {
-    component.click();
-    component.click();
+    component.click(clickEvt);
+  });
+
+  ok(component.get("isHidden") === true);
+});
+
+test('two click events from the initial load of the component set isHidden to true', function(){
+  var component = this.subject();
+  var clickEvt = {target: {nodeName: "not a button"}};
+  // appends the component to the page
+  this.append();
+
+  Ember.run(function() {
+    component.click(clickEvt);
+    component.click(clickEvt);
   });
 
   ok(component.get("isHidden") === true);
