@@ -3,9 +3,9 @@
 <h3>Order</h3>
 
 <ul>
-	{{#each}}
+	{{#each orderItem in this}}
 	<li>
-		{{name}}
+		{{orderItem.name}}
 	</li>
 	{{/each}}
 </ul>

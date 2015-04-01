@@ -9,28 +9,28 @@ moduleForComponent('menu-item', 'MenuItemComponent', {
   // needs: ['component:foo', 'helper:bar']
 });
 
-test('it renders', function() {
-  expect(2);
+test('it renders', function(assert) {
+  assert.expect(2);
 
   // creates the component instance
   var component = this.subject();
-  equal(component._state, 'preRender');
+  assert.equal(component._state, 'preRender');
 
   // appends the component to the page
   this.append();
-  equal(component._state, 'inDOM');
+  assert.equal(component._state, 'inDOM');
 });
 
-test('The default of isHidden is true', function(){
+test('The default of isHidden is true', function(assert){
   var component = this.subject();
 
   // appends the component to the page
   this.append();
 
-  ok(component.get("isHidden") === true);
+  assert.ok(component.get("isHidden") === true);
 });
 
-test('the click event toggles isHidden', function(){
+test('the click event toggles isHidden', function(assert){
   var component = this.subject();
   var clickEvt = {target: {nodeName: "not a button"}};
 
@@ -41,10 +41,10 @@ test('the click event toggles isHidden', function(){
     component.click(clickEvt);
   });
 
-  ok(component.get("isHidden") === false);
+  assert.ok(component.get("isHidden") === false);
 });
 
-test('the click event on the button does *not* toggle isHidden', function(){
+test('the click event on the button does *not* toggle isHidden', function(assert){
   var component = this.subject();
   //nodeName is BUTTON when the button is clicked
   var clickEvt = {target: {nodeName: "BUTTON"}};
@@ -56,10 +56,10 @@ test('the click event on the button does *not* toggle isHidden', function(){
     component.click(clickEvt);
   });
 
-  ok(component.get("isHidden") === true);
+  assert.ok(component.get("isHidden") === true);
 });
 
-test('two click events from the initial load of the component set isHidden to true', function(){
+test('two click events from the initial load of the component set isHidden to true', function(assert){
   var component = this.subject();
   var clickEvt = {target: {nodeName: "not a button"}};
   // appends the component to the page
@@ -70,7 +70,7 @@ test('two click events from the initial load of the component set isHidden to tr
     component.click(clickEvt);
   });
 
-  ok(component.get("isHidden") === true);
+  assert.ok(component.get("isHidden") === true);
 });
 
 

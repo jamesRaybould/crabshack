@@ -24,29 +24,29 @@ var payload = {
 	
 };
 
-test('it exists', function() {
-	ok(serializer);
+test('it exists', function(assert) {
+	assert.ok(serializer);
 });
 
-test('When given an object list it returns an array',function(){
-	ok(result instanceof Array);
+test('When given an object list it returns an array',function(assert){
+	assert.ok(result instanceof Array);
 });
 
-test('It returns both test objects with an ID attached', function(){
+test('It returns both test objects with an ID attached', function(assert){
 	var item = result[0];
-	ok(item.id !== undefined || item.id !== null);
+	assert.ok(item.id !== undefined || item.id !== null);
 });
 
-test('The ID of the first item is "menuItem1"', function(){
+test('The ID of the first item is "menuItem1"', function(assert){
 	var item = result[0];
-	ok(item.id === "menuItem1");
+	assert.ok(item.id === "menuItem1");
 });
 
-test('The name of the first item is correctly set', function(){
+test('The name of the first item is correctly set', function(assert){
 	var item = result[0];
-	ok(item.name === "menuItem1");
+	assert.ok(item.name === "menuItem1");
 });
 
-test('Number of items in the array is the same as the number of items in the object list', function(){
-	ok(Object.keys(payload).length === result.length);
+test('Number of items in the array is the same as the number of items in the object list', function(assert){
+	assert.ok(Object.keys(payload).length === result.length);
 });
