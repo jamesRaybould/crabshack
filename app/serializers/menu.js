@@ -1,7 +1,8 @@
 import DS from 'ember-data';
-//The data coming back from the API is a list of objects,
-//this converts it into an array so that Ember can use it
-export default DS.RESTSerializer.extend({
+
+export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin,{
+	//The data coming back from the API is a list of objects,
+	//this converts it into an array so that Ember can use it
 	extract: function(store, type, payload){
 		var menuItems = [];
 		//The keys are the names of the menu items
@@ -18,4 +19,6 @@ export default DS.RESTSerializer.extend({
 		
 		return menuItems;
 	}
+
+	
 });

@@ -13,7 +13,5 @@ export default DS.RESTAdapter.extend({
 
 		return this._super(decamelizedType);
 
-	},
-
-	defaultSerializer: 'MenuSerializer',
+	}
 });
