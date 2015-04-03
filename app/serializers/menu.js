@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin,{
+export default DS.RESTSerializer.extend({
 	//The data coming back from the API is a list of objects,
 	//this converts it into an array so that Ember can use it
 	extract: function(store, type, payload){
