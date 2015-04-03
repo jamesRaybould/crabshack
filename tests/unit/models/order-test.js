@@ -5,7 +5,7 @@ import {
 
 moduleForModel('order', 'Order', {
   // Specify the other units that are required for this test.
-  needs: ['model:menu']
+  needs: ['model:orderItem']
 });
 
 test('it exists', function(assert) {
