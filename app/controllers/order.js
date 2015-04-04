@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
 
-	setupController: function(controller, model) {
-		// controller.set('model', model);
-	},
+
 
 	actions: {
 		order:function(){
@@ -14,10 +12,7 @@ export default Ember.ArrayController.extend({
 			var _this = this;
 			order.save().then(
 				function(success){
-					_this.set('model', []);					
-				}, function(err){
-					console.log(err);
-
+					_this.set('model', []);
 				});
 		},
 		
@@ -41,14 +36,7 @@ export default Ember.ArrayController.extend({
 		return this.get('model').length > 0;
 	}.property('@each.item'),
 
-	// hasOrderedItems: function(){
-	// 	return this.ordered.get("orderItems").length > 0;
-	// }.property('@each.order'),
-
-	orderedItems: function(){
-		this.store.find('table',1).then(function(success){
-
-			
-		});
-	}.property('orderedItems')
+	hasOrderedItems: function(){
+		return this.get("orderedItems").get('orderItems').length > 0;
+	}.property('@each.order'),
 });

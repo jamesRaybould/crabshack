@@ -13,4 +13,18 @@
 <button {{action "order"}}>Order</button>
 <button {{action "clearAll"}}>Clear All</button>
 {{/if}}
+
+{{!-- {{#if hasOrderedItems}} --}}
+<ul>
+	{{#each orderedItem in orderedItems.orderItems}}
+	<li>
+		{{orderedItem.id}} - {{orderedItem.state}}
+	</li>
+	{{/each}}
+</ul>	
+
+Total: £{{orderedItems.total}}
+{{!-- {{/if}} --}}
+
 {{outlet}}
+
