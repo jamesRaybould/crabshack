@@ -6,7 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-	this.resource("menu", {path: "/"}, function() {
+  this.resource("menu", {path: "/"}, function() {
     	this.resource("order", function() {});
 	});
+  this.resource('table', {path: "table/:tableid"});
 });

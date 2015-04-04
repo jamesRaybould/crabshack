@@ -1,21 +1,33 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+
+	setupController: function(controller, model) {
+		// controller.set('model', model);
+	},
+
 	actions: {
 		order:function(){
 			var orderItems = this.get('model');
 			var order = this.store.createRecord('order', {tableNumber: 1});
 			order.get('orderItems').addObjects(orderItems);
-			order.save().then(function(){
-			
-			}, function(){
-				//Ignore the error
-			});
+			var _this = this;
+			order.save().then(
+				function(success){
+					_this.set('model', []);					
+				}, function(err){
+					console.log(err);
+
+				});
 		},
 		
 		clearAll:function(){
 			this.clear();
 		}
+	},
+
+	orderedItemsArray: function(){
+		return this.store.createRecord('order');
 	},
 
 	subTotal: function(){
@@ -27,5 +39,16 @@ export default Ember.ArrayController.extend({
 
 	hasItems: function(){
 		return this.get('model').length > 0;
-	}.property('@each.item')
+	}.property('@each.item'),
+
+	// hasOrderedItems: function(){
+	// 	return this.ordered.get("orderItems").length > 0;
+	// }.property('@each.order'),
+
+	orderedItems: function(){
+		this.store.find('table',1).then(function(success){
+
+			
+		});
+	}.property('orderedItems')
 });

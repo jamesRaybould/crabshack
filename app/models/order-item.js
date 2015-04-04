@@ -5,5 +5,5 @@ export default DS.Model.extend({
 	type:  DS.attr('string'),
 	description:  DS.attr('string'),
 	price:  DS.attr('string'),
-	status:  DS.attr('string')
+	state:  DS.attr('string')
 });

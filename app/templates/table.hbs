@@ -1,0 +1,8 @@
+{{outlet}}
+	
+{{#each orderItem in model.orderItems}}
+	<li>
+	{{orderItem.id}} - {{orderItem.state}}
+	</li>
+{{/each}}
+Total: £{{model.total}}
