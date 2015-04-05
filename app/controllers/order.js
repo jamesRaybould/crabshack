@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
 
-
+	needs: "table",
+    table: Ember.computed.alias("controllers.table"),
 
 	actions: {
 		order:function(){

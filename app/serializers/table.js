@@ -8,7 +8,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	},
 
 	extract: function(store, type, payload, id, requestType) {
-		var table = { id: id, orderItems: payload.orderItems, total: payload.total};
+		var table = { id: id, orderItems: payload.orderItems, total: payload.total, tableNumber: id};
 		return this._super(store, type, {table:table}, id, requestType);
 	},
 

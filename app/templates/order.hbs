@@ -16,14 +16,14 @@
 
 {{!-- {{#if hasOrderedItems}} --}}
 <ul>
-	{{#each orderedItem in orderedItems.orderItems}}
+	{{#each orderedItem in table.model.orderItems}}
 	<li>
 		{{orderedItem.id}} - {{orderedItem.state}}
 	</li>
 	{{/each}}
 </ul>	
 
-Total: £{{orderedItems.total}}
+Total: £{{table.model.total}}
 {{!-- {{/if}} --}}
 
 {{outlet}}

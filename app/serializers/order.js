@@ -8,8 +8,9 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	},
 
 	extract: function(store, type, payload, id, requestType) {
+		payload.tableNumber = id;
+		payload.id = id;
 		var order = {order:payload};
-
 		return this._super(store, type, order, id, requestType);
 	},
 

@@ -5,9 +5,9 @@ export default Ember.ArrayController.extend({
 	actions: {
 		order: function(item){
 			//Push the menu item into a type of orderItem for sending
-			var orderItem = this.store.createRecord('orderItem', {id: item.id, name: item.get("name"), price: item.get("price")});
+			// var orderItem = this.store.createRecord('orderItem', {id: item.id, name: item.get("name"), price: item.get("price")});
 			//Is there a better way that jumping across *into* another controller??
-			this.get('controllers.order').pushObject(orderItem);
+			this.get('controllers.order').pushObject(item);
 		}
 	},
 
