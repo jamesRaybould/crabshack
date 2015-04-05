@@ -1,13 +1,15 @@
-html, body {
-  /*margin: 20px;*/
-  font-family: Helvetica, Arial, Sans-Serif;
+html,
+body {
+    /*margin: 20px;*/
+    
+    font-family: Helvetica, Arial, Sans-Serif;
 }
 
 #container {
-	width: 1140px;
-	margin: 0 auto;
+    width: 1140px;
+    margin: 0 auto;
 }
 
-.is-hidden{
-	display: none;
+.is-hidden {
+    display: none;
 }
