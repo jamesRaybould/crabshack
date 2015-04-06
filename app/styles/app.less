@@ -1,0 +1,39 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #f00;
+}
+
+@pageWidth: 1140px;
+#header {
+    margin: 0 auto;
+    height: 100px;
+    max-width: @pageWidth;
+    h1 {
+        color: #444;
+        float: right;
+        line-height: 100px;
+    }
+    img {
+        float: left;
+        height: 100px;
+    }
+    clear:both;
+}
+
+#container {
+    max-width: @pageWidth;
+    margin: 0 auto;
+}
+
+.is-hidden {
+    display: none;
+}
