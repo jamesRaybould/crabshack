@@ -1,5 +1,7 @@
+<div id="order">
+
 {{#if hasItems}}
-<h3>Order</h3>
+<h2>Order</h2>
 
 <ul>
 	{{#each orderItem in this}}
@@ -15,7 +17,7 @@
 
 {{#if table.hasItems}}
 <div id="table">
-<h3>Ordered</h3>
+<h2>Ordered</h2>
 <ul>
 	{{#each orderedItem in table.model.orderItems}}
 	<li>
@@ -30,3 +32,4 @@ Total: £{{table.model.total}}
 
 {{outlet}}
 
+</div>
