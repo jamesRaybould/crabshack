@@ -1,10 +1,11 @@
-<div class="name">
-	{{item.name}}
-	<span class="price">
-		{{item.price}}
-	</span>
+<div class="menuItem">
+	<div class="header">
+		{{item.name}} {{item.price}}
+	</div>
+	<button {{action "order"}}>Order this tasty treat</button>
+	<br/>
 	<div {{bind-attr class=":description isHidden"}}>
 		{{item.description}}
 	</div>
-	<button {{action "order"}}>Order this tasty treat</button>
+	
 </div>

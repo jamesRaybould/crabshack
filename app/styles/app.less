@@ -4,6 +4,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: Helvetica, Arial, Sans-Serif;
+    color: #222;
 }
 
 h1,
@@ -19,7 +20,7 @@ h4 {
     height: 100px;
     max-width: @pageWidth;
     h1 {
-        color: #444;
+        color: #222;
         float: right;
         line-height: 100px;
     }
@@ -36,6 +37,20 @@ h4 {
     ul {
         list-style: none;
         padding-left: 0;
+    }
+    .menuItem {
+        max-width: 400px;
+        padding: 5px 0 15px 0;
+        .header {
+            float: left;
+        }
+        .description {
+            float: left;
+        }
+        button {
+            float: right;
+        }
+        clear:both;
     }
 }
 
