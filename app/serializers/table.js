@@ -10,12 +10,30 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     },
 
     extract: function(store, type, payload, id, requestType) {
+
+        var orderItems = [];
+
+        payload.orderItems.forEach(function(item) {
+
+            var orderItem = orderItems.find(function(orderItem) {
+                return orderItem.id == item.id;
+            });
+
+            if (orderItem != undefined) {
+                orderItem.number++;
+            } else {
+                item.number = 1;
+                orderItems.push(item);
+            }
+        });
+
         var table = {
             id: id,
-            orderItems: payload.orderItems,
+            orderItems: orderItems,
             total: payload.total,
             tableNumber: id
         };
+
         return this._super(store, type, {
             table: table
         }, id, requestType);
