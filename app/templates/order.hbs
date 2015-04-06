@@ -13,7 +13,9 @@
 <button {{action "clearAll"}}>Clear All</button>
 {{/if}}
 
-{{!-- {{#if hasOrderedItems}} --}}
+{{#if table.hasItems}}
+<div id="table">
+<h3>Ordered</h3>
 <ul>
 	{{#each orderedItem in table.model.orderItems}}
 	<li>
@@ -23,7 +25,8 @@
 </ul>	
 
 Total: £{{table.model.total}}
-{{!-- {{/if}} --}}
+</div>
+{{/if}}
 
 {{outlet}}
 
