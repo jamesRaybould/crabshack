@@ -16,10 +16,10 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
         payload.orderItems.forEach(function(item) {
 
             var orderItem = orderItems.find(function(orderItem) {
-                return orderItem.id == item.id;
+                return orderItem.id === item.id;
             });
 
-            if (orderItem != undefined) {
+            if (orderItem !== undefined) {
                 orderItem.number++;
             } else {
                 item.number = 1;

@@ -14,11 +14,11 @@ export default Ember.ArrayController.extend({
             order.get('orderItems').addObjects(orderItems);
             var _this = this;
             order.save().then(
-                function(data) {
+                function() {
                     _this.set('model', []);
                     //trigger what I can only describe as a horrfically inefficient fetch of
                     // the updated table information from the remote API
-                    _this.store.fetchById('table', 1)
+                    _this.store.fetchById('table', 1);
                 });
         },
 

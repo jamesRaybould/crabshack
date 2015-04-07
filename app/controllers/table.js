@@ -8,10 +8,9 @@ export default Ember.Controller.extend({
         }, 30000);
     },
     hasItems: function() {
-
-        if (this.get("model").get('orderItems') != undefined) {
+        if (this.get("model").get('orderItems') !== undefined) {
             return this.get("model").get('orderItems').length > 0;
-        };
+        }
         return false;
     }.property('model.@each.orderItem'),
 });
