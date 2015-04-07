@@ -7,4 +7,13 @@ export default Ember.Route.extend({
     model: function() {
         return [];
     },
+    renderTemplate: function() {
+        this._super();
+
+        this.render('table', {
+            into: 'order',
+            outlet: 'table',
+            controller: 'table'
+        });
+    }
 });

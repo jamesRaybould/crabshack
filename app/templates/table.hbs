@@ -1,8 +1,14 @@
-{{outlet}}
-	
-{{#each orderItem in model.orderItems}}
+{{#if hasItems}}
+<div id="table">
+<h2>Ordered</h2>
+<ul>
+	{{#each orderedItem in model.orderItems}}
 	<li>
-	{{orderItem.id}} - {{orderItem.state}}
+		{{orderedItem.number}} x {{orderedItem.id}} - {{orderedItem.state}}
 	</li>
-{{/each}}
+	{{/each}}
+</ul>	
+
 Total: £{{model.total}}
+</div>
+{{/if}}
