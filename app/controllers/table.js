@@ -12,13 +12,11 @@ export default Ember.Controller.extend({
             return this.get("model").get('orderItems').length > 0;
         }
         return false;
-    }.property('model.@each.orderItem'),
+    }.property('model.orderItems.@each'),
     allDelivered: function() {
-
         var hasUndelivered = this.get("model").get("orderItems").some(function(item) {
             return item.get("state") !== "delivered";
         });
-
         return hasUndelivered ? "Patience grasshopper, it'll be here soon" : "It is all here, eat up!";
-    }.property('model.@each.orderItem')
+    }.property('model.orderItems.@each')
 });
