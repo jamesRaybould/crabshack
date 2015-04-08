@@ -10,7 +10,6 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     },
 
     extract: function(store, type, payload, id, requestType) {
-
         var orderItems = [];
 
         payload.orderItems.forEach(function(item) {

@@ -8,14 +8,14 @@ export default Ember.Controller.extend({
         }, 30000);
     },
     hasItems: function() {
-        if (this.get("model").get('orderItems') !== undefined) {
-            return this.get("model").get('orderItems').length > 0;
+        if (this.get('model.orderItems') !== undefined) {
+            return this.get('model.orderItems').length > 0;
         }
         return false;
     }.property('model.orderItems.@each'),
     allDelivered: function() {
-        var hasUndelivered = this.get("model").get("orderItems").some(function(item) {
-            return item.get("state") !== "delivered";
+        var hasUndelivered = this.get('model.orderItems').some(function(item) {
+            return item.get('state') !== "delivered";
         });
         return hasUndelivered ? "Patience grasshopper, it'll be here soon" : "It is all here, eat up!";
     }.property('model.orderItems.@each')

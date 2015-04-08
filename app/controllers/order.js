@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-
-    needs: "table",
-    table: Ember.computed.alias("controllers.table"),
-
     actions: {
         order: function() {
             var orderItems = this.get('model');
@@ -28,8 +24,8 @@ export default Ember.ArrayController.extend({
     },
 
     subTotal: function() {
-        return this.get("model").reduce(function(previousValue, item) {
-            var price = Number(item.get("price"));
+        return this.get('model').reduce(function(previousValue, item) {
+            var price = Number(item.get('price'));
             return previousValue + price;
         }, 0).toFixed(2);
     }.property('@each.price'),
@@ -39,6 +35,6 @@ export default Ember.ArrayController.extend({
     }.property('@each.item'),
 
     hasOrderedItems: function() {
-        return this.get("orderedItems").get('orderItems').length > 0;
+        return this.get('orderedItems.orderItems').length > 0;
     }.property('@each.order'),
 });
